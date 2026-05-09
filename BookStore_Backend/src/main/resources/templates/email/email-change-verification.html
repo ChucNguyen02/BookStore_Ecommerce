@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4;">
+<div style="max-width: 600px; margin: 40px auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 30px; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 24px;">Email Address Change Request</h1>
+    </div>
+
+    <!-- Content -->
+    <div style="padding: 40px 30px;">
+        <p style="font-size: 16px; margin-bottom: 20px;">Hello <strong th:text="${userName}">User</strong>,</p>
+
+        <p style="font-size: 14px; color: #555; margin-bottom: 20px;">
+            You have requested to change your email address to this one.
+        </p>
+
+        <p style="font-size: 14px; color: #555; margin-bottom: 30px;">
+            Please click the button below to verify and complete the email change:
+        </p>
+
+        <!-- Button -->
+        <div style="text-align: center; margin: 40px 0;">
+            <a th:href="${verificationUrl}"
+               style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+                          color: white;
+                          padding: 14px 40px;
+                          text-decoration: none;
+                          border-radius: 8px;
+                          display: inline-block;
+                          font-weight: bold;
+                          font-size: 16px;
+                          box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);">
+                Verify Email Change
+            </a>
+        </div>
+
+        <!-- Alternative Link -->
+        <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee;">
+            <p style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                Or copy and paste this link into your browser:
+            </p>
+            <p style="font-size: 12px; color: #3b82f6; word-break: break-all; background-color: #f3f4f6; padding: 10px; border-radius: 5px;">
+                <a th:href="${verificationUrl}" th:text="${verificationUrl}" style="color: #3b82f6; text-decoration: none;">
+                    Verification URL
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f9fafb; padding: 20px 30px; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 12px; color: #6b7280; margin: 0 0 10px 0;">
+            ⏱️ This link will expire in <strong>24 hours</strong>.
+        </p>
+        <p style="font-size: 12px; color: #6b7280; margin: 0;">
+            🔒 If you didn't request this change, please ignore this email.
+        </p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: #4CAF50; color: white; padding: 20px; text-align: center; }
+    .content { padding: 20px; background: #f9f9f9; }
+    .button { display: inline-block; padding: 10px 20px; background: #4CAF50;
+      color: white; text-decoration: none; border-radius: 5px; }
+    .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Xác nhận đơn hàng</h1>
+  </div>
+  <div class="content">
+    <p>Xin chào <strong th:text="${customerName}">Khách hàng</strong>,</p>
+    <p>Cảm ơn bạn đã đặt hàng tại BookStore!</p>
+    <h3>Thông tin đơn hàng:</h3>
+    <ul>
+      <li><strong>Mã đơn hàng:</strong> <span th:text="${orderCode}">ORD-123</span></li>
+      <li><strong>Ngày đặt:</strong> <span th:text="${orderDate}">01/01/2024</span></li>
+      <li><strong>Tổng tiền:</strong> <span th:text="${#numbers.formatDecimal(totalAmount, 0, 'COMMA', 0, 'POINT')}">1,000,000</span> VNĐ</li>
+      <li><strong>Địa chỉ giao hàng:</strong> <span th:text="${shippingAddress}">...</span></li>
+    </ul>
+    <p style="text-align: center; margin-top: 30px;">
+      <a th:href="${orderLink}" class="button">Xem chi tiết đơn hàng</a>
+    </p>
+  </div>
+  <div class="footer">
+    <p>© 2024 BookStore. All rights reserved.</p>
+    <p>Nếu bạn có thắc mắc, vui lòng liên hệ: support@bookstore.com</p>
+  </div>
+</div>
+</body>
+</html>
+
+<!-- shipping-notification.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: #2196F3; color: white; padding: 20px; text-align: center; }
+    .content { padding: 20px; background: #f9f9f9; }
+    .tracking { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }
+    .button { display: inline-block; padding: 10px 20px; background: #2196F3;
+      color: white; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🚚 Đơn hàng đang được giao</h1>
+  </div>
+  <div class="content">
+    <p>Xin chào <strong th:text="${customerName}">Khách hàng</strong>,</p>
+    <p>Đơn hàng <strong th:text="${orderCode}">ORD-123</strong> của bạn đang trên đường giao đến!</p>
+    <div class="tracking">
+      <p><strong>Mã vận đơn:</strong> <span th:text="${trackingNumber}">TN-123456</span></p>
+      <p><strong>Thời gian dự kiến:</strong> <span th:text="${estimatedDelivery}">3-5 ngày</span></p>
+    </div>
+    <p style="text-align: center; margin-top: 30px;">
+      <a th:href="${orderLink}" class="button">Theo dõi đơn hàng</a>
+    </p>
+  </div>
+</div>
+</body>
+</html>
+
+<!-- password-reset.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: #f44336; color: white; padding: 20px; text-align: center; }
+    .content { padding: 20px; background: #f9f9f9; }
+    .warning { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }
+    .button { display: inline-block; padding: 10px 20px; background: #f44336;
+      color: white; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Đặt lại mật khẩu</h1>
+  </div>
+  <div class="content">
+    <p>Xin chào <strong th:text="${userName}">Khách hàng</strong>,</p>
+    <p>Chúng tôi nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn.</p>
+    <div class="warning">
+      <p>⚠️ Link này chỉ có hiệu lực trong <strong th:text="${expiryTime}">30 phút</strong>.</p>
+    </div>
+    <p style="text-align: center; margin-top: 30px;">
+      <a th:href="${resetLink}" class="button">Đặt lại mật khẩu</a>
+    </p>
+    <p style="color: #666; font-size: 12px; margin-top: 30px;">
+      Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.
+    </p>
+  </div>
+</div>
+</body>
+</html>
+
+<!-- welcome.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white; padding: 30px; text-align: center; }
+    .content { padding: 20px; background: #f9f9f9; }
+    .benefits { background: white; padding: 15px; margin: 20px 0; border-radius: 5px; }
+    .button { display: inline-block; padding: 10px 20px; background: #667eea;
+      color: white; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🎉 Chào mừng đến với BookStore!</h1>
+  </div>
+  <div class="content">
+    <p>Xin chào <strong th:text="${userName}">Khách hàng</strong>,</p>
+    <p>Cảm ơn bạn đã đăng ký tài khoản tại BookStore!</p>
+    <div class="benefits">
+      <h3>Quyền lợi của bạn:</h3>
+      <ul>
+        <li>✅ Tích điểm mỗi lần mua hàng</li>
+        <li>✅ Nhận voucher giảm giá độc quyền</li>
+        <li>✅ Miễn phí vận chuyển đơn từ 200k</li>
+        <li>✅ Đổi trả trong 7 ngày</li>
+      </ul>
+    </div>
+    <p style="text-align: center; margin-top: 30px;">
+      <a th:href="${homeLink}" class="button">Bắt đầu mua sắm</a>
+    </p>
+  </div>
+</div>
+</body>
+</html>

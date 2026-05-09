@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deleted - BookStore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+            color: #333;
+        }
+
+        .greeting {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .message {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #d97706;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box ul li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 24px;
+            font-size: 14px;
+        }
+
+        .info-box ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+        .feedback-box {
+            background-color: #fef3c7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+            border: 1px solid #fcd34d;
+        }
+
+        .feedback-box p {
+            margin-bottom: 10px;
+        }
+
+        .feedback-box a {
+            color: #d97706;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #1f2937;
+            color: #9ca3af;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #fbbf24;
+            text-decoration: none;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 30px 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                border-radius: 0;
+                margin: 0;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <!-- Header -->
+    <div class="header">
+        <h1>BookStore</h1>
+        <p>Tạm biệt & Cảm ơn bạn</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <p class="greeting">Xin chào <strong th:text="${userName}">User</strong>,</p>
+
+        <p class="message">
+            Tài khoản của bạn đã được xóa thành công khỏi hệ thống BookStore theo yêu cầu.
+        </p>
+
+        <div class="info-box">
+            <h3>🗑️ Những gì đã bị xóa:</h3>
+            <ul>
+                <li>Thông tin cá nhân và tài khoản</li>
+                <li>Địa chỉ giao hàng đã lưu</li>
+                <li>Giỏ hàng và danh sách yêu thích</li>
+                <li>Điểm tích lũy và phần thưởng</li>
+                <li>Lịch sử đơn hàng (đã hoàn tất)</li>
+            </ul>
+        </div>
+
+        <p class="message">
+            Chúng tôi rất tiếc khi phải tạm biệt bạn. Cảm ơn bạn đã tin tưởng và đồng hành cùng BookStore trong thời gian qua! 💜
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="feedback-box">
+            <p style="margin-bottom: 15px; color: #1f2937; font-weight: bold; font-size: 15px;">
+                Bạn có muốn chia sẻ lý do rời đi không?
+            </p>
+            <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px;">
+                Phản hồi của bạn sẽ giúp chúng tôi cải thiện dịch vụ tốt hơn
+            </p>
+            <a href="mailto:[[${supportEmail}]]?subject=Feedback về việc xóa tài khoản">
+                Gửi phản hồi
+            </a>
+        </div>
+
+        <p class="message" style="margin-top: 30px;">
+            <strong>Bạn có thể quay lại bất cứ lúc nào!</strong><br>
+            Nếu bạn muốn mua sắm trở lại, chỉ cần đăng ký tài khoản mới hoặc đăng nhập bằng Google.
+        </p>
+
+        <div style="text-align: center;">
+            <a th:href="${homeLink}" class="cta-button">
+                Quay lại BookStore
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <p style="font-size: 13px; color: #6b7280; margin-top: 20px; padding: 15px; background-color: #fef3c7; border-radius: 8px; border-left: 3px solid #f59e0b;">
+            <strong style="color: #d97706;">⚠️ Lưu ý:</strong> Nếu bạn không yêu cầu xóa tài khoản này, vui lòng liên hệ với chúng tôi ngay lập tức tại
+            <a th:href="'mailto:' + ${supportEmail}" style="color: #d97706; text-decoration: none; font-weight: bold;">[[${supportEmail}]]</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><strong style="color: #fbbf24;">BookStore</strong></p>
+        <p>Your favorite online bookstore</p>
+        <p style="margin-top: 15px;">
+            <a th:href="${homeLink}">Trang chủ</a> |
+            <a th:href="${homeLink + '/contact'}">Liên hệ</a> |
+            <a th:href="${homeLink + '/privacy'}">Chính sách</a>
+        </p>
+        <p style="margin-top: 15px; font-size: 12px; color: #6b7280;">
+            © 2024 BookStore. All rights reserved.
+        </p>
+    </div>
+</div>
+</body>
+</html>

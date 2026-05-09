@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4;">
+<div style="max-width: 600px; margin: 40px auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 30px; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 24px;">📧 Verify Your Email</h1>
+    </div>
+
+    <!-- Content -->
+    <div style="padding: 40px 30px;">
+        <p style="font-size: 16px; margin-bottom: 20px;">Hello <strong th:text="${userName}">User</strong>,</p>
+
+        <p style="font-size: 14px; color: #555; margin-bottom: 20px;">
+            Thank you for registering with BookStore! 🎉 To complete your registration and activate your account, please verify your email address by clicking the button below:
+        </p>
+
+        <!-- Verification Button -->
+        <div style="text-align: center; margin: 40px 0;">
+            <a th:href="${verificationUrl}"
+               style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+                      color: white;
+                      padding: 14px 40px;
+                      text-decoration: none;
+                      border-radius: 8px;
+                      display: inline-block;
+                      font-weight: bold;">
+                Verify Email Address
+            </a>
+        </div>
+
+        <p style="font-size: 13px; color: #666; margin-bottom: 20px;">
+            Or copy and paste this link into your browser:
+        </p>
+        <p style="font-size: 12px; word-break: break-all; color: #3498db; background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+            <a th:href="${verificationUrl}" th:text="${verificationUrl}" style="color: #3498db; text-decoration: none;">verification link</a>
+        </p>
+
+        <!-- Warning Box -->
+        <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 25px 0; border-radius: 4px;">
+            <p style="margin: 0; font-size: 13px; color: #856404;">
+                <strong>⚠️ Important:</strong>
+            </p>
+            <ul style="margin: 10px 0 0 0; padding-left: 20px; font-size: 13px; color: #856404;">
+                <li>This link will expire in <strong th:text="${expiryTime}">24 hours</strong></li>
+                <li>If you didn't request this verification, please ignore this email</li>
+            </ul>
+        </div>
+
+        <p style="font-size: 13px; color: #666;">
+            If you experience any issues verifying your email, please contact our support team.
+        </p>
+
+        <p style="font-size: 14px; margin-top: 30px;">
+            Best regards,<br>
+            <strong>BookStore Team</strong>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f8f9fa; padding: 20px 30px; text-align: center; border-top: 1px solid #e9ecef;">
+        <p style="font-size: 12px; color: #6c757d; margin: 5px 0;">
+            This is an automated email, please do not reply.
+        </p>
+        <p style="font-size: 12px; color: #6c757d; margin: 5px 0;">
+            &copy; 2025 BookStore. All rights reserved.
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
