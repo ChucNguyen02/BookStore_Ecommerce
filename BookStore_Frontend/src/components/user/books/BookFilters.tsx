@@ -16,7 +16,7 @@ interface BookFiltersProps {
 }
 
 export const BookFilters = ({ currentFilters, onFilterChange, onClearFilters }: BookFiltersProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { language: appLanguage } = useAppContext();
 
   const languageDisplay: Record<string, { vi: string; en: string; }> = {

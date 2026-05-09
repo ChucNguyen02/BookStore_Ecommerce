@@ -41,7 +41,7 @@ export default function OrderReviewList() {
             const itemsToReview = orderData.items.filter(item => !item.hasReviewed);
 
             if (itemsToReview.length === 0) {
-                toast.info(t('OrderReviewList.allReviewed'));
+                toast(t('OrderReviewList.allReviewed'), { icon: 'ℹ️' });
                 navigate(`/orders/${orderCode}`);
                 return;
             }

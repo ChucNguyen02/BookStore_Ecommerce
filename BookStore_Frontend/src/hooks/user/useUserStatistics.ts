@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { userStatisticsService } from '../../services';
-import { type UserStatisticsResponse } from '../../types';
+
 import toast from 'react-hot-toast';
 import { useAppContext } from '../../context/AppContext';
 

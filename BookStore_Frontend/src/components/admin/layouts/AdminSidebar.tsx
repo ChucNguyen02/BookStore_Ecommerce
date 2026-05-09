@@ -8,7 +8,6 @@ import {
     Tag,
     Gift,
     BarChart3,
-    Settings,
     MessageSquare,
     Star,
     Package,

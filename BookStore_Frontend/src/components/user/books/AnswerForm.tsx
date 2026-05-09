@@ -3,13 +3,13 @@ import { Loader2, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface AnswerFormProps {
-  questionId: string;
+  questionId?: string;
   onSubmit: (answer: string) => Promise<void>;
   onCancel: () => void;
   submitting: boolean;
 }
 
-export const AnswerForm = ({ questionId, onSubmit, onCancel, submitting }: AnswerFormProps) => {
+export const AnswerForm = ({ questionId: _questionId, onSubmit, onCancel, submitting }: AnswerFormProps) => {
   const { t } = useTranslation();
   const [answer, setAnswer] = useState('');
 

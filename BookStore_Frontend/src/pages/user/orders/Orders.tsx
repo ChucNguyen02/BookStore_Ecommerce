@@ -21,7 +21,7 @@ const Orders = () => {
         changePage,
     } = useOrders();
 
-    const { createVNPayPayment, createMomoPayment, loading: paymentLoading } = usePayment();
+    const { createVNPayPayment, createMomoPayment } = usePayment();
 
     // Handle "Pay Now" for PAYMENT_PENDING orders
     const handlePayNow = async (orderCode: string) => {
@@ -114,7 +114,7 @@ const Orders = () => {
                 {/* Status Tabs */}
                 <OrderStatusTabs
                     activeStatus={currentStatus}
-                    onStatusChange={filterByStatus}
+                    onStatusChange={(status: any) => filterByStatus(status)}
                     counts={statusCounts}
                 />
 

@@ -27,7 +27,7 @@ export default function AdminReviews() {
         refetch
     } = useAdminReviews();
 
-    const [selectedBookId, setSelectedBookId] = useState<string | null>(null);
+    const [selectedBookId] = useState<string | null>(null);
     const { summary } = useReviewSummary(selectedBookId);
 
     const [currentPage, setCurrentPage] = useState(0);
@@ -44,9 +44,9 @@ export default function AdminReviews() {
         sortDirection: 'DESC'
     });
 
-    const handleSearch = useCallback((keyword: string) => {
+    const handleSearch = useCallback((_keyword: string) => {
         // Implement search functionality
-        toast.info('Search functionality will be implemented');
+        toast('Search functionality will be implemented', { icon: 'ℹ️' });
     }, []);
 
     const handleRatingFilter = useCallback((rating?: number) => {
@@ -73,9 +73,9 @@ export default function AdminReviews() {
         }
     }, [filters, selectedBookId, fetchBookReviews]);
 
-    const handleVerifiedFilter = useCallback((isVerified: boolean) => {
+    const handleVerifiedFilter = useCallback((_isVerified: boolean) => {
         // Implement verified filter
-        toast.info('Verified filter will be implemented');
+        toast('Verified filter will be implemented', { icon: 'ℹ️' });
     }, []);
 
     const handleSortChange = useCallback((sortBy: string, sortDirection: string) => {
@@ -147,12 +147,12 @@ export default function AdminReviews() {
         return success;
     }, [replyToReview, refetch]);
 
-    const handleFlagSpam = useCallback((reviewId: string) => {
+    const handleFlagSpam = useCallback((_reviewId: string) => {
         toast.success('Review flagged as spam');
         // Implement flag spam functionality
     }, []);
 
-    const handleToggleVisibility = useCallback((reviewId: string) => {
+    const handleToggleVisibility = useCallback((_reviewId: string) => {
         toast.success('Review visibility toggled');
         // Implement toggle visibility functionality
     }, []);

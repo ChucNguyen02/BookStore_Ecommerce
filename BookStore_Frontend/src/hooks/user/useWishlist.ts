@@ -33,7 +33,7 @@ export const useWishlist = () => {
     const addToWishlist = async (bookId: string): Promise<boolean> => {
         try {
             setUpdating(true);
-            const newItem = await wishlistService.addToWishlist(bookId);
+            await wishlistService.addToWishlist(bookId);
 
 
             queryClient.invalidateQueries({ queryKey: ['wishlist'] });

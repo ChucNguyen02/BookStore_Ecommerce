@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { X, Loader2, DollarSign, Percent, Calendar } from 'lucide-react';
 import { adminVoucherService } from '../../../services';
 import { type VoucherRequest } from '../../../types/voucher.types';
-import { VoucherDiscountType } from '../../../types/enum';
+// import { VoucherDiscountType } from '../../../types/enum';
 import toast from 'react-hot-toast';
 
 interface VoucherFormModalProps {

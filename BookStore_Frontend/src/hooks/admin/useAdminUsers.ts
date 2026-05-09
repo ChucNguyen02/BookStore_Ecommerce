@@ -83,7 +83,7 @@ export const useAdminUsers = () => {
         setCurrentPage(0);
     };
 
-    const handleToggleActive = async (userId: string, currentStatus: boolean) => {
+    const handleToggleActive = async (_userId: string, _currentStatus: boolean) => {
         try {
             // Backend doesn't have direct toggle endpoint
             // Would need to be implemented on backend
@@ -96,7 +96,7 @@ export const useAdminUsers = () => {
         }
     };
 
-    const handleChangeRole = async (userId: string, newRole: Role) => {
+    const handleChangeRole = async (_userId: string, _newRole: Role) => {
         try {
             // Backend doesn't have direct role change endpoint
             // Would need to be implemented on backend
@@ -109,7 +109,7 @@ export const useAdminUsers = () => {
         }
     };
 
-    const handleDeleteUser = async (userId: string) => {
+    const handleDeleteUser = async (_userId: string) => {
         try {
             // Backend doesn't have admin delete user endpoint
             // Would need to be implemented on backend

@@ -137,12 +137,12 @@ export default function Rewards() {
                                     <p className="text-sm opacity-90 mb-1">{t('Rewards.yourPoints')}</p>
                                     <div className="flex items-center gap-2">
                                         <Star className="w-8 h-8 fill-white" />
-                                        <span className="text-4xl font-bold">{currentUser.totalPoints}</span>
+                                        <span className="text-4xl font-bold">{currentUser?.totalPoints}</span>
                                     </div>
                                 </div>
                                 <div className="text-right">
                                     <p className="text-sm opacity-90 mb-1">{t('Rewards.tier')}</p>
-                                    <span className="text-2xl font-bold">{currentUser.tier || 'BRONZE'}</span>
+                                    <span className="text-2xl font-bold">{currentUser?.tier || 'BRONZE'}</span>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@ export default function Rewards() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     {filteredRewards.map((reward) => {
                         const canAfford = isAuthenticated && currentUser?.totalPoints !== null
-                            ? currentUser.totalPoints >= reward.pointsRequired
+                            ? (currentUser?.totalPoints ?? 0) >= reward.pointsRequired
                             : false;
                         const isAvailable = reward.isAvailable && reward.stockQuantity > 0;
 

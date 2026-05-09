@@ -16,7 +16,7 @@ export default function AdminLogin() {
         rememberMe: false
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -56,14 +56,14 @@ export default function AdminLogin() {
 
         } catch (error) {
             console.error('Admin login error:', error);
-            toast.error(error.message || t('AdminLogin.toast.loginFailed'));
+            toast.error((error as any).message || t('AdminLogin.toast.loginFailed'));
 
         } finally {
             setIsLoading(false);
         }
     };
 
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && !isLoading) {
             handleSubmit();
         }

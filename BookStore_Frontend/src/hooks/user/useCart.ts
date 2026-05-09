@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { cartService, authService } from '../../services';
-import type { CartResponse, AddToCartRequest, UpdateCartItemRequest } from '../../types';
+import type { AddToCartRequest, UpdateCartItemRequest } from '../../types';
 import toast from 'react-hot-toast';
 import { useAppContext } from '../../context/AppContext';
 import { eventEmitter, EVENTS } from '../../utils/eventEmitter';

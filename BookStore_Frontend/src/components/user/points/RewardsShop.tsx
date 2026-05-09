@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';import { useState } from 'react';
-import { Gift, Book, Tag, Sparkles, Star, Package, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Gift, Book, Tag, Sparkles, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRewards } from '../../../hooks/user/useRewards';
 import { useAppContext } from '../../../context/AppContext';
 import { RewardRedeemModal } from './RewardRedeemModal';
@@ -305,7 +305,7 @@ export const RewardsShop = ({ currentPoints }: RewardsShopProps) => {const { t }
         reward={selectedReward}
         currentPoints={currentPoints}
         redeeming={redeeming}
-        onConfirm={redeemReward}
+        onConfirm={async (id, addr, note) => { await redeemReward(id, addr, note); }}
         onClose={() => setSelectedReward(null)} />
 
       }

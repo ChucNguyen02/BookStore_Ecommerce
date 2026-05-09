@@ -2,11 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     X,
-    User as UserIcon,
     Mail,
     Phone,
-    Calendar,
-    Shield,
     Award,
     ShoppingBag,
     MessageSquare,
@@ -23,7 +20,7 @@ interface UserDetailModalProps {
     onUpdate: () => void;
 }
 
-export default function UserDetailModal({ userId, onClose, onUpdate }: UserDetailModalProps) {
+export default function UserDetailModal({ userId, onClose, onUpdate: _onUpdate }: UserDetailModalProps) {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState<'info' | 'orders' | 'points'>('info');
     const { user, isLoading, error } = useUserDetail(userId);
@@ -208,9 +205,7 @@ export default function UserDetailModal({ userId, onClose, onUpdate }: UserDetai
                                         <span className="text-gray-500 dark:text-gray-400">
                                             {t('admin.authProvider')}:
                                         </span>
-                                        <span className="ml-2 text-gray-900 dark:text-white font-medium">
-                                            {user.authProvider}
-                                        </span>
+                                            {(user as any).authProviders?.join(', ') || (user as any).authProvider || 'LOCAL'}
                                     </div>
                                     <div>
                                         <span className="text-gray-500 dark:text-gray-400">

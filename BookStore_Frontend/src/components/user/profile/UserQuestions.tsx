@@ -40,7 +40,7 @@ export const UserQuestions = () => {const { t } = useTranslation();
   }, [data]);
 
   // Get filtered questions
-  const questions = data?.questions || [];
+  const questions = (data as any)?.questions || [];
 
   const handleDeleteQuestion = async (questionId: string) => {
     if (!window.confirm(
@@ -145,7 +145,7 @@ export const UserQuestions = () => {const { t } = useTranslation();
                         </p>
                     </div> :
 
-        questions.map((question) =>
+        questions.map((question: any) =>
         <div
           key={question.id}
           className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
@@ -204,7 +204,7 @@ export const UserQuestions = () => {const { t } = useTranslation();
                             {/* Answers */}
                             {question.answers && question.answers.length > 0 &&
           <div className="space-y-3 pl-8">
-                                    {question.answers.map((answer) =>
+                                    {question.answers.map((answer: any) =>
             <div
               key={answer.id}
               className={`p-4 rounded-lg ${

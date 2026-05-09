@@ -107,7 +107,7 @@ export const ProfileInfo = ({
     }
 
     try {
-      let finalData = { ...formData };
+      const finalData = { ...formData };
 
       if (!finalData.phone || !finalData.phone.trim()) {
         finalData.phone = undefined as any;

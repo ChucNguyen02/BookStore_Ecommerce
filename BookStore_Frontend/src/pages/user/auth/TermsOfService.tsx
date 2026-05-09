@@ -87,7 +87,7 @@ export default function TermsOfService() {
                                     {t('TermsOfService.section2.sub1.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('TermsOfService.section2.sub1.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section2.sub1.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -97,7 +97,7 @@ export default function TermsOfService() {
                                     {t('TermsOfService.section2.sub2.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('TermsOfService.section2.sub2.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section2.sub2.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -116,7 +116,7 @@ export default function TermsOfService() {
                                     {t('TermsOfService.section3.sub1.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('TermsOfService.section3.sub1.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section3.sub1.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -126,7 +126,7 @@ export default function TermsOfService() {
                                     {t('TermsOfService.section3.sub2.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('TermsOfService.section3.sub2.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section3.sub2.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -140,7 +140,7 @@ export default function TermsOfService() {
                             {t('TermsOfService.section4.title')}
                         </h2>
                         <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                            {t('TermsOfService.section4.items', { returnObjects: true }).map((item: string, index: number) => (
+                            {(t('TermsOfService.section4.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                 <li key={index}>{item}</li>
                             ))}
                         </ul>
@@ -157,7 +157,7 @@ export default function TermsOfService() {
                                     {t('TermsOfService.section5.sub1.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('TermsOfService.section5.sub1.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section5.sub1.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -167,7 +167,7 @@ export default function TermsOfService() {
                                     {t('TermsOfService.section5.sub2.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('TermsOfService.section5.sub2.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section5.sub2.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -186,7 +186,7 @@ export default function TermsOfService() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p>{t('TermsOfService.section6.desc')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('TermsOfService.section6.items', { returnObjects: true }).map((item: string, index: number) => (
+                                {(t('TermsOfService.section6.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
@@ -201,7 +201,7 @@ export default function TermsOfService() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p className="mb-4">{t('TermsOfService.section7.intro')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('TermsOfService.section7.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section7.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
@@ -216,7 +216,7 @@ export default function TermsOfService() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p className="mb-4">{t('TermsOfService.section8.intro')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('TermsOfService.section8.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('TermsOfService.section8.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>

@@ -8,7 +8,6 @@ import {
     XCircle,
     Truck,
     MapPin,
-    User,
     Award,
     Loader2,
 } from 'lucide-react';

@@ -7,7 +7,7 @@ interface VoucherStatsCardProps {
     color: 'blue' | 'green' | 'purple' | 'orange';
 }
 
-export default function VoucherStatsCard({ label, value, icon: Icon, color }: VoucherStatsCardProps) {
+export default function VoucherStatsCard({ label, value: _value, icon: Icon, color }: VoucherStatsCardProps) {
     const colorClasses = {
         blue: 'from-blue-500 to-cyan-500',
         green: 'from-green-500 to-emerald-500',

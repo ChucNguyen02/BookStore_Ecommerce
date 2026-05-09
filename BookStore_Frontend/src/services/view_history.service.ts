@@ -1,6 +1,7 @@
 import apiClient from './api.client';
 import { type PageResponse } from '../types';
 import { type BookResponse } from '../types';
+import { type ViewHistoryResponse } from '../types';
 
 class ViewHistoryService {
     private readonly BASE_URL = '/view-history';
@@ -17,8 +18,8 @@ class ViewHistoryService {
         }
     }
 
-    async getViewHistory(page: number = 0, size: number = 20): Promise<PageResponse<BookResponse>> {
-        const response = await apiClient.get<PageResponse<BookResponse>>(
+    async getViewHistory(page: number = 0, size: number = 20): Promise<PageResponse<ViewHistoryResponse>> {
+        const response = await apiClient.get<PageResponse<ViewHistoryResponse>>(
             this.BASE_URL,
             { params: { page, size } }
         );

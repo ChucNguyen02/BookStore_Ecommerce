@@ -13,6 +13,8 @@ export interface PageResponse<T> {
     first: boolean;
     last: boolean;
     empty: boolean;
+    hasNext?: boolean;
+    hasPrevious?: boolean;
 }
 
 export interface PaginationRequest {

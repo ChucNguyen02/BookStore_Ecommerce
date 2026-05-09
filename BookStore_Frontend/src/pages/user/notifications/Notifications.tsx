@@ -3,6 +3,7 @@ import { Bell, Trash2, CheckCheck, ChevronLeft, ChevronRight } from 'lucide-reac
 import { NotificationCard, NotificationFilter } from '../../../components/user/notifications';
 import LoadingSpinner from '../../../components/user/common/LoadingSpinner';
 import { useNotifications } from '../../../hooks/user/useNotifications';
+import { NotificationType } from '../../../types/enum';
 import { useTranslation } from 'react-i18next';
 
 const Notifications = () => {

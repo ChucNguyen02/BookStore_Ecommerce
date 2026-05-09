@@ -28,7 +28,7 @@ export const SearchWithSuggestions = ({ placeholder }: SearchWithSuggestionsProp
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const debounceTimer = useRef<NodeJS.Timeout>();
+  const debounceTimer = useRef<any>(null);
 
   // Sử dụng hook để search
   const { data: searchData, isLoading } = useSearchBooks(debouncedQuery, 0, 10);

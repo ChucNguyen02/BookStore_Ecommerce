@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { type OrderDetailResponse, type OrderStatus } from '../../../types';
+import { type OrderDetailResponse } from '../../../types';
 import OrderStatusBadge from './OrderStatusBadge';
 import LoadingSpinner from '../common/LoadingSpinner';
 

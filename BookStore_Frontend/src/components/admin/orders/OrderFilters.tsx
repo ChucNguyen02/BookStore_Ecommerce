@@ -1,4 +1,4 @@
-import { Search, Filter, Calendar, X, Phone, Mail, CreditCard, Sparkles } from 'lucide-react';
+import { Search, Filter, Calendar, X, Phone, Mail, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OrderStatus, PaymentMethod } from '../../../types';

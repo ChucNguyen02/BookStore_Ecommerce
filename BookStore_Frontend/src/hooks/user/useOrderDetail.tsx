@@ -1,4 +1,5 @@
-import { useTranslation } from 'react-i18next';import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useState, useEffect, useCallback } from 'react';
 import { orderService } from '../../services';
 import toast from 'react-hot-toast';
 import { useAppContext } from '../../context/AppContext';
@@ -9,6 +10,7 @@ import type { OrderDetailResponse } from '../../types';
 
 export const useOrderDetail = (orderCode: string) => {
   const { language } = useAppContext();
+  const { t } = useTranslation();
   const [order, setOrder] = useState<OrderDetailResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

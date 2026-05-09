@@ -34,6 +34,7 @@ class BookService {
             totalPages: page.totalPages ?? 1,
             first: page.first ?? true,
             last: page.last ?? true,
+            empty: page.empty ?? false,
             hasNext: page.hasNext ?? false,
             hasPrevious: page.hasPrevious ?? false,
         };

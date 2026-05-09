@@ -105,7 +105,7 @@ export const SaleBookGrid: React.FC<SaleBookGridProps> = ({
           disabled={isLoading}
           className="px-8 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-medium hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all">
           
-                        {isLoading ? <LoadingSpinner size="small" /> : t("Common.xemThem")}
+                        {isLoading ? <LoadingSpinner size="sm" /> : t("Common.xemThem")}
                     </button>
                 </div>
       }

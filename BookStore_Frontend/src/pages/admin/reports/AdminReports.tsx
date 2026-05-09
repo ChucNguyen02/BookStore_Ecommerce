@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import {
     BarChart3,
     TrendingUp,
-    Download,
     Calendar,
     DollarSign,
     Package,
@@ -12,7 +11,6 @@ import {
 } from 'lucide-react';
 import { useAdminReports } from '../../../hooks/admin/useAdminReports';
 import LoadingSpinner from '../../../components/admin/common/LoadingSpinner';
-import ReportTabs from '../../../components/admin/reports/ReportTabs';
 import RevenueReport from '../../../components/admin/reports/RevenueReport';
 import ProductReport from '../../../components/admin/reports/ProductReport';
 import CustomerReport from '../../../components/admin/reports/CustomerReport';

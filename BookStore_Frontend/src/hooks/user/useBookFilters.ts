@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { bookService } from '../../services';
 import type { BookResponse, BookFilterRequest } from '../../types';
-import type { PageResponse } from '../../types';
+
 
 export const useBookFilters = () => {
     const [searchParams, setSearchParams] = useSearchParams();

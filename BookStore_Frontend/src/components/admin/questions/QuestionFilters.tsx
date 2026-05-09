@@ -60,7 +60,7 @@ export default function QuestionFilters({
                     }
                 };
 
-                const colors = colorClasses[option.color];
+                const colors = colorClasses[option.color as keyof typeof colorClasses];
 
                 return (
                     <button

@@ -185,7 +185,7 @@ export const NewArrivalsGrid: React.FC<NewArrivalsGridProps> = ({
                     >
                         {isLoading ? (
                             <>
-                                <LoadingSpinner size="small" />
+                                <LoadingSpinner size="sm" />
                                 <span>{t('NewArrivalsGrid.loading')}</span>
                             </>
                         ) : (

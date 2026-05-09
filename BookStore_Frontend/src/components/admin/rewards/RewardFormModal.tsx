@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { X, Loader2, Upload } from 'lucide-react';
+import { X, Loader2 } from 'lucide-react';
 import { adminRewardService } from '../../../services';
 import { type RewardItemRequest } from '../../../types/reward.types';
-import { RewardType, VoucherDiscountType } from '../../../types/enum';
 import toast from 'react-hot-toast';
 
 interface RewardFormModalProps {

@@ -8,6 +8,7 @@ interface PaymentMethodBadgeProps {
 }
 
 export const PaymentMethodBadge = ({ method, size = 'md' }: PaymentMethodBadgeProps) => {const { t } = useTranslation();
+if ((method as any) === 'LOCAL') return null;
   const { language } = useAppContext();
 
   const getMethodConfig = () => {
@@ -46,7 +47,7 @@ export const PaymentMethodBadge = ({ method, size = 'md' }: PaymentMethodBadgePr
       }
     };
 
-    return configs[method] || configs.COD;
+    return (configs as any)[method] || configs.COD;
   };
 
   const config = getMethodConfig();

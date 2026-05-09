@@ -96,7 +96,7 @@ const Promotions: React.FC = () => {
                         {/* Books Grid */}
                         {isLoading && books.length === 0 ? (
                             <div className="flex justify-center py-12">
-                                <LoadingSpinner size="large" />
+                                <LoadingSpinner size="lg" />
                             </div>
                         ) : (
                             <SaleBookGrid

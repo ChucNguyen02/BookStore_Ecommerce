@@ -5,7 +5,6 @@ import { useAdminRewards } from '../../../hooks/admin/useAdminRewards';
 import RewardItemsTable from '../../../components/admin/rewards/RewardItemsTable';
 import RewardFormModal from '../../../components/admin/rewards/RewardFormModal';
 import RewardDetailModal from '../../../components/admin/rewards/RewardDetailModal';
-import RewardStatsCard from '../../../components/admin/rewards/RewardStatsCard';
 import RedemptionsTable from '../../../components/admin/rewards/RedemptionsTable';
 import RedemptionDetailModal from '../../../components/admin/rewards/RedemptionDetailModal';
 import Pagination from '../../../components/admin/common/Pagination';

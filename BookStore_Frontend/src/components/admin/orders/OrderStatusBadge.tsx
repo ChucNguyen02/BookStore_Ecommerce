@@ -214,6 +214,12 @@ export function OrderStatusBadgeGradient({
             label: 'Returned',
             gradient: 'from-orange-500 to-amber-600',
             showPulse: false
+        },
+        PAYMENT_PENDING: {
+            icon: Clock,
+            label: 'Payment Pending',
+            gradient: 'from-orange-400 to-yellow-500',
+            showPulse: true
         }
     };
 

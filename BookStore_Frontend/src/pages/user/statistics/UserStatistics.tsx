@@ -73,7 +73,7 @@ const UserStatistics = () => {
                         {error || t('UserStatistics.loadError')}
                     </p>
                     <button
-                        onClick={refetch}
+                        onClick={() => refetch()}
                         className="px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors"
                     >
                         {t('UserStatistics.tryAgain')}
@@ -140,7 +140,7 @@ const UserStatistics = () => {
 
                         {/* Actions */}
                         <button
-                            onClick={refetch}
+                            onClick={() => refetch()}
                             className="p-2.5 bg-white dark:bg-gray-800 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-lg border border-gray-200 dark:border-gray-700"
                             title={t('UserStatistics.refresh')}
                         >

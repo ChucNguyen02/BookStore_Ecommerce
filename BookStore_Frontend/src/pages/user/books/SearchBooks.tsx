@@ -104,7 +104,7 @@ const SearchBooks = () => {
 
                         {error ? (
                             <div className="text-center py-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-                                <p className="text-xl text-red-600 dark:text-red-400 mb-6">{error}</p>
+                                <p className="text-xl text-red-600 dark:text-red-400 mb-6">{String(error)}</p>
                                 <button
                                     onClick={() => window.location.reload()}
                                     className="px-8 py-4 bg-amber-500 text-white rounded-xl hover:bg-amber-600 transition-all font-semibold"

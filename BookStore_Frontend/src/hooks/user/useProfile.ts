@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { userService, addressService, authService, fileUploadService } from '../../services';
-import type { UserProfileResponse, UpdateProfileRequest } from '../../types';
-import type { AddressResponse, AddressRequest } from '../../types';
+import type { UpdateProfileRequest } from '../../types';
+import type { AddressRequest } from '../../types';
 import toast from 'react-hot-toast';
 import { eventEmitter, EVENTS } from '../../utils/eventEmitter';
 
@@ -57,8 +57,8 @@ export const useProfile = () => {
 
             const updateData: UpdateProfileRequest = {
                 fullName: data.fullName || profile?.fullName || '',
-                phone: data.phone !== undefined ? data.phone : profile?.phone,
-                avatarUrl: data.avatarUrl !== undefined ? data.avatarUrl : profile?.avatarUrl,
+                phone: data.phone !== undefined ? data.phone : (profile?.phone ?? undefined),
+                avatarUrl: data.avatarUrl !== undefined ? data.avatarUrl : (profile?.avatarUrl ?? undefined),
             };
 
             console.log('📝 Updating profile with:', updateData);

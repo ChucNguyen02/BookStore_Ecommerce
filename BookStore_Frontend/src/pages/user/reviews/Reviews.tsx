@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams, Link } from 'react-router-dom';
-import { Star, Image as ImageIcon, X, Upload, Award, CheckCircle, ArrowLeft, Package, Sparkles } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Star, X, Upload, Award, CheckCircle, ArrowLeft, Package, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useFileUpload } from '../../../hooks/user/useFileUpload';
 import { useOrders } from '../../../hooks/user/useOrders';

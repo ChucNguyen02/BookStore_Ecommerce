@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
                                     {t('PrivacyPolicy.section1.subsection1.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('PrivacyPolicy.section1.subsection1.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section1.subsection1.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
                                     {t('PrivacyPolicy.section1.subsection2.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('PrivacyPolicy.section1.subsection2.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section1.subsection2.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
                                     {t('PrivacyPolicy.section1.subsection3.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('PrivacyPolicy.section1.subsection3.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section1.subsection3.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p className="mb-4">{t('PrivacyPolicy.section2.description')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('PrivacyPolicy.section2.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section2.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
                                     {t('PrivacyPolicy.section3.subsection1.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('PrivacyPolicy.section3.subsection1.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section3.subsection1.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index}>{item}</li>
                                     ))}
                                 </ul>
@@ -182,7 +182,7 @@ export default function PrivacyPolicy() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p className="mb-4">{t('PrivacyPolicy.section4.description')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('PrivacyPolicy.section4.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section4.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
@@ -211,7 +211,7 @@ export default function PrivacyPolicy() {
                                     {t('PrivacyPolicy.section5.subsection1.title')}
                                 </h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 ml-4">
-                                    {t('PrivacyPolicy.section5.subsection1.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section5.subsection1.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                         <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
                                     ))}
                                 </ul>
@@ -239,7 +239,7 @@ export default function PrivacyPolicy() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p className="mb-4">{t('PrivacyPolicy.section6.description')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('PrivacyPolicy.section6.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section6.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
                                 ))}
                             </ul>
@@ -262,7 +262,7 @@ export default function PrivacyPolicy() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p>{t('PrivacyPolicy.section7.description')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('PrivacyPolicy.section7.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section7.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
@@ -291,7 +291,7 @@ export default function PrivacyPolicy() {
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                             <p>{t('PrivacyPolicy.section9.description')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('PrivacyPolicy.section9.items', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section9.items', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
@@ -313,7 +313,7 @@ export default function PrivacyPolicy() {
                             <p>{t('PrivacyPolicy.section10.description')}</p>
                             <p>{t('PrivacyPolicy.section10.notification')}</p>
                             <ul className="list-disc list-inside space-y-2 ml-4">
-                                {t('PrivacyPolicy.section10.notifyMethods', { returnObjects: true }).map((item: string, index: number) => (
+                                    {(t('PrivacyPolicy.section10.notifyMethods', { returnObjects: true }) as any[]).map((item: string, index: number) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>

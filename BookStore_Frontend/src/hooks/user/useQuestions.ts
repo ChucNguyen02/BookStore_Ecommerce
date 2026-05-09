@@ -222,7 +222,7 @@ export const useUserQuestions = () => {
             queryFn: ({ pageParam = 0 }) => 
                 questionService.getUserQuestions(pageParam as number, 20),
             getNextPageParam: (lastPage) => 
-                lastPage.last ? undefined : lastPage.number + 1,
+                lastPage.last ? undefined : lastPage.pageNumber + 1,
             initialPageParam: 0,
             staleTime: 2 * 60 * 1000, // 2 minutes
             gcTime: 5 * 60 * 1000, // 5 minutes

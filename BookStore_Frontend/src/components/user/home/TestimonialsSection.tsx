@@ -100,7 +100,7 @@ export const TestimonialsSection = () => {
                                             <h4 className="font-bold text-gray-900 dark:text-white">
                                                 {testimonial.userName || t('TestimonialsSection.anonymous')}
                                             </h4>
-                                            {testimonial.verified && (
+                                            {testimonial.isVerifiedPurchase && (
                                                 <span className="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-semibold rounded-full">
                                                     ✓ {t('TestimonialsSection.verified')}
                                                 </span>

@@ -3,9 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { orderService } from '../../services';
 import toast from 'react-hot-toast';
 import { useAppContext } from '../../context/AppContext';
-import type { OrderResponse, } from '../../types';
 import { OrderStatus } from '../../types';
-import type { PageResponse } from '../../types';
 
 export const useOrders = () => {
     const { language } = useAppContext();

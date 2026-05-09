@@ -42,6 +42,8 @@ export default function Login() {
                 password: formData.password,
             });
 
+            if (!response) return;
+
             if (response.user.role !== 'USER') {
                 toast.error(t('Login.adminNotAllowed'), { duration: 6000 });
                 await logout();
@@ -98,6 +100,8 @@ export default function Login() {
             setIsLoading(true);
 
             const response = await googleLogin(credentialResponse.credential);
+
+            if (!response) return;
 
             if (response.user.role !== 'USER') {
                 toast.error(t('Login.adminGoogleNotAllowed'), { duration: 6000 });

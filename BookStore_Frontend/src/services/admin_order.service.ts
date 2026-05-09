@@ -1,5 +1,5 @@
 import apiClient from './api.client';
-import { type ApiResponse, type PageResponse } from '../types/base.types';
+import { type PageResponse } from '../types/base.types';
 import { type OrderResponse } from '../types/order.types';
 import { type Order } from '../types/order.types';
 import { type OrderStatus, type PaymentMethod } from '../types/enum';
@@ -11,9 +11,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             this.BASE_URL,
-            { page, size }
+            { params: { page, size } }
         );
         return response.result!;
     }
@@ -23,9 +23,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/search`,
-            { keyword, page, size }
+            { params: { keyword, page, size } }
         );
         return response.result!;
     }
@@ -35,9 +35,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/customer/${customerId}`,
-            { page, size }
+            { params: { page, size } }
         );
         return response.result!;
     }
@@ -47,9 +47,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/phone/${phone}`,
-            { page, size }
+            { params: { page, size } }
         );
         return response.result!;
     }
@@ -59,9 +59,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/email/${email}`,
-            { page, size }
+            { params: { page, size } }
         );
         return response.result!;
     }
@@ -71,25 +71,25 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/payment-method/${paymentMethod}`,
-            { page, size }
+            { params: { page, size } }
         );
         return response.result!;
     }
 
     async getOrdersToAutoComplete(daysAfterDelivery: number = 7): Promise<Order[]> {
-        const response = await apiClient.get<ApiResponse<Order[]>>(
+        const response = await apiClient.get<Order[]>(
             `${this.BASE_URL}/auto-complete`,
-            { daysAfterDelivery }
+            { params: { daysAfterDelivery } }
         );
         return response.result!;
     }
 
     async getExpiredPendingOrders(hoursTimeout: number = 24): Promise<Order[]> {
-        const response = await apiClient.get<ApiResponse<Order[]>>(
+        const response = await apiClient.get<Order[]>(
             `${this.BASE_URL}/expired-pending`,
-            { hoursTimeout }
+            { params: { hoursTimeout } }
         );
         return response.result!;
     }
@@ -99,9 +99,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/status/${status}`,
-            { page, size }
+            { params: { page, size } }
         );
         return response.result!;
     }
@@ -112,9 +112,9 @@ class AdminOrderService {
         page: number = 0,
         size: number = 20
     ): Promise<PageResponse<OrderResponse>> {
-        const response = await apiClient.get<ApiResponse<PageResponse<OrderResponse>>>(
+        const response = await apiClient.get<PageResponse<OrderResponse>>(
             `${this.BASE_URL}/date-range`,
-            { startDate, endDate, page, size }
+            { params: { startDate, endDate, page, size } }
         );
         return response.result!;
     }
@@ -141,7 +141,7 @@ class AdminOrderService {
         cancelledOrders: number;
         totalRevenue: number;
     }> {
-        const response = await apiClient.get<ApiResponse<any>>(
+        const response = await apiClient.get<any>(
             `${this.BASE_URL}/statistics`
         );
         return response.result!;

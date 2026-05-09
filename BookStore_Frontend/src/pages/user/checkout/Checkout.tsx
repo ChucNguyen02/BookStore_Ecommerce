@@ -6,6 +6,9 @@ import { PaymentMethodSelector } from '../../../components/user/checkout/Payment
 import { VoucherApplier } from '../../../components/user/checkout/VoucherApplier';
 import { CheckoutSummary } from '../../../components/user/checkout/CheckoutSummary';
 import LoadingSpinner from '../../../components/user/common/LoadingSpinner';
+import type { CartItemResponse } from '../../../types/cart.types';
+import type { AddressResponse } from '../../../types/address.types';
+import { type PaymentMethod } from '../../../types/enum';
 import { useCart } from '../../../hooks/user/useCart';
 import { useProfile } from '../../../hooks/user/useProfile';
 import { useCheckout } from '../../../hooks/user/useCheckout';
@@ -170,7 +173,7 @@ const Checkout = () => {
 
         setSavingPhone(true);
         try {
-            const success = await updateProfile({ phone: phoneNumber.trim() });
+            const success = await updateProfile({ fullName: profile?.fullName || '', phone: phoneNumber.trim() });
             if (success) {
                 setShowPhoneModal(false);
                 toast.success(t('Checkout.phoneModal.success'));
@@ -237,11 +240,6 @@ const Checkout = () => {
     if (!cart || cart.items.length === 0 || selectedCartItemIds.length === 0) {
         return null;
     }
-
-    const selectedSubtotal = selectedItems.reduce((sum, item) => {
-        const price = item.discountPrice || item.price;
-        return sum + (price * item.quantity);
-    }, 0);
 
     const selectedQuantity = selectedItems.reduce((sum, item) => sum + item.quantity, 0);
 

@@ -108,7 +108,7 @@ export const BestsellerGrid: React.FC<BestsellerGridProps> = ({
           >
             {isLoading ? (
               <>
-                <LoadingSpinner size="small" />
+                <LoadingSpinner size="sm" />
                 <span>{t(`${prefix}.loading`)}</span>
               </>
             ) : (

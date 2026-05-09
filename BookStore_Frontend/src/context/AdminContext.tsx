@@ -1,5 +1,6 @@
-import { createContext, useContext, useState, useCallback, useMemo, ReactNode, useEffect } from 'react';
-import { authService, statisticsService } from '../services';
+import { createContext, useContext, useState, useCallback, useMemo, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { authService } from '../services';
 import type { User } from '../types/user.types';
 import toast from 'react-hot-toast';
 

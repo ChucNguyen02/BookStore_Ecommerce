@@ -9,8 +9,6 @@ import {
 import {
     LineChart,
     Line,
-    BarChart,
-    Bar,
     PieChart,
     Pie,
     Cell,
@@ -319,7 +317,7 @@ export default function CustomerReport({ data }: CustomerReportProps) {
                                 cx="50%"
                                 cy="50%"
                                 labelLine={false}
-                                label={({ tier, percentage }) => `${tier} (${percentage.toFixed(1)}%)`}
+                                label={(props: any) => `${props.tier} (${props.percentage.toFixed(1)}%)`}
                                 outerRadius={80}
                                 fill="#8884d8"
                                 dataKey="count"

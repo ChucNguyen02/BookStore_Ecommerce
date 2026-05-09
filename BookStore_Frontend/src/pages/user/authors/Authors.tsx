@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, AlertCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useAppContext } from '../../../context/AppContext';
 import { useAuthors } from '../../../hooks/user';
 import { AuthorCard } from '../../../components/user/authors/AuthorCard';
 import { AuthorList } from '../../../components/user/authors/AuthorList';

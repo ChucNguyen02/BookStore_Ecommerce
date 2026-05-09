@@ -91,7 +91,7 @@ class ApiClient {
                 const apiError = error.response?.data as ApiResponse<unknown> | undefined;
                 const errorMsg =
                     apiError?.message ||
-                    apiError?.error ||
+                    (apiError as any)?.error ||
                     error.response?.data?.msg ||
                     error.message ||
                     'An error occurred';

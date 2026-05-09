@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Search, Filter, UserPlus, Download, Loader2 } from 'lucide-react';
+import { Search, Filter, UserPlus, Download } from 'lucide-react';
 import { useAdminUsers } from '../../../hooks/admin/useAdminUsers';
 import { Role, Tier } from '../../../types/enum';
 import UserTable from '../../../components/admin/users/UserTable';

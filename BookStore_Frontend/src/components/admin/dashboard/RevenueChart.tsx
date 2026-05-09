@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
-import { TrendingUp, Calendar } from 'lucide-react';
+import {  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
+import { TrendingUp } from 'lucide-react';
 
 interface RevenueChartProps {
     dailyRevenue: Record<string, number>;
@@ -97,7 +97,7 @@ export default function RevenueChart({ dailyRevenue }: RevenueChartProps) {
                                     padding: '12px'
                                 }}
                                 labelStyle={{ fontWeight: 'bold', color: '#1f2937', marginBottom: '4px' }}
-                                formatter={(value: number) => [`$${value.toLocaleString()}`, t('admin.revenue')]}
+                                formatter={(value: any) => [`$${value.toLocaleString()}`, t('admin.revenue')]}
                             />
                             <Area 
                                 type="monotone" 

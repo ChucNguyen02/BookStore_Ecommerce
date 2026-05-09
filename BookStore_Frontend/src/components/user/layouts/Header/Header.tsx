@@ -37,7 +37,7 @@ export const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [showCompactNav, setShowCompactNav] = useState(false);
 
-    const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+    const scrollTimeoutRef = useRef<any>(null);
 
     const navigationItems = useMemo(
         () => [

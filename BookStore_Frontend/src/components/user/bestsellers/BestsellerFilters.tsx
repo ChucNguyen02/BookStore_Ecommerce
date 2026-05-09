@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Filter, X, ChevronDown } from 'lucide-react';
 import { useCategories } from '../../../hooks/user/useCategories';
 import { useTranslation } from 'react-i18next';
-import type { BestsellerFilters } from '../../../types/bestseller.types';
+import type { BestsellerFilters as BestsellerFiltersType } from '../../../types/bestseller.types';
 
 interface BestsellerFiltersProps {
-  filters: BestsellerFilters;
-  onFiltersChange: (filters: BestsellerFilters) => void;
+  filters: BestsellerFiltersType;
+  onFiltersChange: (filters: BestsellerFiltersType) => void;
 }
 
 export const BestsellerFilters: React.FC<BestsellerFiltersProps> = ({
@@ -27,7 +27,7 @@ export const BestsellerFilters: React.FC<BestsellerFiltersProps> = ({
   };
 
   const handleResetFilters = () => {
-    const resetFilters: BestsellerFilters = {
+    const resetFilters: BestsellerFiltersType = {
       sortBy: 'soldCount',
       sortDirection: 'DESC'
     };
@@ -66,7 +66,7 @@ export const BestsellerFilters: React.FC<BestsellerFiltersProps> = ({
           <select
             value={`${filters.sortBy}-${filters.sortDirection}`}
             onChange={(e) => {
-              const [sortBy, sortDirection] = e.target.value.split('-') as [BestsellerFilters['sortBy'], 'ASC' | 'DESC'];
+              const [sortBy, sortDirection] = e.target.value.split('-') as [BestsellerFiltersType['sortBy'], 'ASC' | 'DESC'];
               onFiltersChange({ ...filters, sortBy, sortDirection });
             }}
             className="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">

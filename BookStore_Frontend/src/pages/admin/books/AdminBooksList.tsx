@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Plus, Search, Edit, Trash2, Eye } from 'lucide-react';
+import { Plus, Search, Eye } from 'lucide-react';
 import { useAdminBooks } from '../../../hooks/admin/useAdminBooks';
 import LoadingSpinner from '../../../components/admin/common/LoadingSpinner';
 import BookTableRow from '../../../components/admin/books/BookTableRow';

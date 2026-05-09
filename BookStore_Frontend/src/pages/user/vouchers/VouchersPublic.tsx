@@ -9,7 +9,7 @@ import type { VoucherResponse } from '../../../types/voucher.types';
 
 export const VouchersPublic = () => {
   const { t } = useTranslation();
-  const { user, isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const { vouchers, loading, getVoucherByCode, checkVoucherValidity } = useVouchers();
 
   const [copiedCode, setCopiedCode] = useState<string | null>(null);

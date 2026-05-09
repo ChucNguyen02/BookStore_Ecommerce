@@ -10,7 +10,7 @@ import {
     reviewService,
     adminOrderService
 } from '../../services';
-import { OrderStatus, PaymentMethod } from '../../types/enum';
+import { OrderStatus } from '../../types/enum';
 import * as XLSX from 'xlsx';
 
 interface DateRange {
@@ -182,7 +182,8 @@ export function useAdminReports(dateRange: DateRange) {
                 newUsersOverTime: newUsersOverTime,
                 topSpenders: await Promise.all(topSpenders.content.map(async (userPoint: any) => {
                     const orders = await orderService.getAllOrdersByStatus(OrderStatus.DELIVERED, 0, 1000);
-                    const userOrders = orders.content.filter((o: any) => o.userId === userPoint.userId);
+                    const content = orders.content as any[];
+                    const userOrders = content.filter((o: any) => o.userId === userPoint.userId);
                     const totalSpent = userOrders.reduce((sum: number, order: any) => sum + order.totalAmount, 0);
                     
                     return {
@@ -429,8 +430,8 @@ export function useAdminReports(dateRange: DateRange) {
             const userOrderCounts = new Map<string, number>();
 
             for (const order of allOrders.content) {
-                const count = userOrderCounts.get(order.userId) || 0;
-                userOrderCounts.set(order.userId, count + 1);
+                const count = userOrderCounts.get((order as any).userId) || 0;
+                userOrderCounts.set((order as any).userId, count + 1);
             }
 
             const repeatCustomers = Array.from(userOrderCounts.values()).filter(count => count > 1).length;
@@ -688,7 +689,7 @@ export function useAdminReports(dateRange: DateRange) {
         }
     };
 
-    const exportPDF = async (reportType: string) => {
+    const exportPDF = async (_reportType: string) => {
         try {
             toast.loading('Exporting to PDF...');
             

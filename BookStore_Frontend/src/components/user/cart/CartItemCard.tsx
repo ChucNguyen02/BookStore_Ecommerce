@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Minus, Plus, Trash2, AlertCircle } from 'lucide-react';
 import type { CartItemResponse } from '../../../types/cart.types';
 import { useTranslation } from 'react-i18next';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 
 interface CartItemCardProps {
     item: CartItemResponse;

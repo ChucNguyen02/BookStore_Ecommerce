@@ -8,7 +8,7 @@ interface ReviewCardProps {
     review: ReviewResponse;
     currentUserId?: string;
     isAdmin?: boolean;
-    onVote: (reviewId: string, voteType: string) => Promise<boolean>;
+    onVote: (reviewId: string, voteType: any) => Promise<boolean>;
     onRemoveVote: (reviewId: string) => Promise<boolean>;
     onEdit: (review: ReviewResponse) => void;
     onDelete: (reviewId: string) => void;
@@ -153,7 +153,7 @@ export const ReviewCard = ({
                                     alt={`Review image ${index + 1}`}
                                     className="w-full h-full object-cover"
                                 />
-                                {index === 3 && review.imageUrls.length > 4 && (
+                                {review.imageUrls && index === 3 && review.imageUrls.length > 4 && (
                                     <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white font-semibold">
                                         +{review.imageUrls.length - 4}
                                     </div>
@@ -163,7 +163,7 @@ export const ReviewCard = ({
                     </div>
 
                     {/* Image Modal */}
-                    {showImages && (
+                    {showImages && review.imageUrls && (
                         <div
                             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
                             onClick={() => setShowImages(false)}

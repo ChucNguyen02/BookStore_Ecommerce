@@ -228,14 +228,14 @@ export default function AdminQuestions() {
                                     <div className="flex items-center gap-2">
                                         <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
                                         <span className="text-sm text-gray-600 dark:text-gray-400">
-                                            {stats?.unanswered || 0} {t('admin.unanswered')}
+                                            {stats?.unansweredQuestions || 0} {t('admin.unanswered')}
                                         </span>
                                     </div>
                                     <div className="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
                                     <div className="flex items-center gap-2">
                                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                                         <span className="text-sm text-gray-600 dark:text-gray-400">
-                                            {stats?.answered || 0} {t('admin.answered')}
+                                            {stats?.answeredQuestions || 0} {t('admin.answered')}
                                         </span>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@ export default function AdminQuestions() {
                                 </div>
                                 <div className="text-sm text-gray-500 dark:text-gray-400">
                                     {t('admin.responseRate')}: <span className="font-semibold text-purple-600 dark:text-purple-400">
-                                        {stats?.total ? Math.round((stats.answered / stats.total) * 100) : 0}%
+                                        {stats?.totalQuestions ? Math.round(((stats.answeredQuestions || 0) / stats.totalQuestions) * 100) : 0}%
                                     </span>
                                 </div>
                             </div>

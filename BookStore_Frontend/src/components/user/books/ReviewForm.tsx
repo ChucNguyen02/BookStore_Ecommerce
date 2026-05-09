@@ -5,8 +5,8 @@ import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 
 interface ReviewFormProps {
-    bookId: string;
-    orderId: string;
+    bookId?: string;
+    orderId?: string;
     existingReview?: {
         id: string;
         rating: number;
@@ -23,8 +23,8 @@ interface ReviewFormProps {
 }
 
 export const ReviewForm = ({
-    bookId,
-    orderId,
+    bookId: _bookId,
+    orderId: _orderId,
     existingReview,
     onSubmit,
     onCancel,
